@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar texto secuencialmente</title>
+    <link rel="icon" href="">
+    <style>
+            img {
+            display: block;
+            height: 50px; /* Ajusta el tamaño de la imagen */
+            margin-left: 5px; /* Espacio desde el borde izquierdo */
+            margin-top: -80px; /* Mueve la imagen hacia arriba */
+            } 
+
+
+        body {
+            background:linear-gradient(to right ,#800080, #8A2BE2, #4169E1, #2F4F4F, #000000);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #texto {
+            size: 15px;
+            font-size: 150px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="" alt="">
+    </header>
+    <div id="texto">Hola</div>
+    <br>
+    <button onclick="cambiarTexto()">Presiona aquí</button>
+
+    <script>
+        // Array con los textos que quieres mostrar
+        var textos = ["A", "B", "C", "D", "E" , "F" , "G" , "DIEGO"];
+        var indice = 0;
+
+        function cambiarTexto() {
+            // Incrementamos el índice y lo ajustamos para que sea cíclico
+            indice = (indice + 1) % textos.length;
+            // Cambiamos el contenido del div con el nuevo texto
+            document.getElementById("texto").innerHTML = textos[indice];
+        }
+    </script>
+</body>
+</html>
